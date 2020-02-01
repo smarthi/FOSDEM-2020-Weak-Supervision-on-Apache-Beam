@@ -210,8 +210,6 @@ return SPAM if 'contact us' in text
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
             <h4>Labeling Function for Keyword Match</h4>
             <pre><code data-trim data-noescape>
-from snorkel.labeling import labeling_function
-
 @labeling_function()
 def lf_keyword_my(x):
     "Many spam comments talk about 'my channel', 'my video', etc."
@@ -222,8 +220,6 @@ def lf_keyword_my(x):
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
             <h4>Labeling Function with Regex Match</h4>
             <pre><code data-trim data-noescape>
-import re
-
 @labeling_function()
 def lf_regex_check_out(x):
     "Spam comments say 'check out my video', 'check it out', etc."
@@ -244,8 +240,6 @@ def lf_short_comment(x):
                 <section data-background-image="img/ZsMwlm2-blueish.jpg">
                     <h4>Labeling Function with 3rd Party models</h4>
                     <pre><code data-trim data-noescape>
-from textblob import TextBlob
-
 @labeling_function()
 def lf_textblob_polarity(x):
     """
@@ -265,6 +259,12 @@ def lf_textblob_polarity(x):
         <section data-background-image="img/ZsMwlm2-redish.jpg">
             <p style='text-align: left'>Output of labeling  functions may overlap/conflict, given the unknown accuracies and correlations with LFs.</p>
             <p style='text-align: left'>Use a LabelModel to automatically estimate the accuracies and correlations, and produce a final set of integrated training labels</p>
+        </section>
+
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h3>Finally, Train a Classifier</h3>
+            <p style='text-align: left'>Ultimate Goal of Weak Supervision is to create training dataset</p>
+            <p style='text-align: left'>This dataset can now be plugged into any Machine Learning Framework like Keras, PyTorch etc.</p>
         </section>
 
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
