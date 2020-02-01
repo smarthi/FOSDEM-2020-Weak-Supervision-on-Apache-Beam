@@ -71,204 +71,164 @@
             <li>Apache Flink - distributed processing engine for <b><span style="color: red">stateful</span></b> computations over data streams.</li>
           </ul>
         </section>
+
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
             <h3>Problem of Labeled Training Data</h3>
         </section>
+                <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+                    <p style='text-align: left'>Typical Supervised Approach</p>
+                    <pre><code data-trim data-noescape>
+Set of Datapoints, x ∈ X
+
+Set of K classes, y ∈ Y = 1,2, ...., K
+
+Learn a classifier, h : X → Y
+            </code></pre>
+         </section>
+         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+
+         <pre><code data-trim data-noescape>
+Get a set of Ground Truth labels, T - (x1,y1),...,(xN,yN)
+
+Traditionally annotated by Subject Matter Experts
+
+Minimize Aggregated loss on Training, eg: SGD (or a loss function)
+         </code></pre>
+                </section>
+
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+            <h3>Problems with this Approach</h3>
+            <ul>
+              <li>Labeling and managing training datasets by hand is one of the biggest bottlenecks in machine learning</li>
+              <li>Professionals are not grad students to accept burritos or T-shirts as remuneration for labor</li>
+              <li>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</li>
+            </ul>
+        </section>
+
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
            <h3>Insufficient Labeled Data</h3>
-            <p style='text-align: left'>Lack of Initial labeled training data to kick start Machine Learning models</p>
-            <p style='text-align: left'>Lack of training data available over time unlike the big Internet companies</p>
-            <p style='text-align: left'>Maybe many years in order to accummulate sufficient training data</p>
+            <ul>
+                <li>Lack of Initial labeled training data to kick start Machine Learning models</li>
+                <li>Lack of training data available over time unlike the big Internet companies</li>
+                <li>Maybe many years in order to accummulate sufficient training data</li>
+                <li>Modern Deep Learning Models need massive sets of handle-labeled data</li>
+            </ul>
         </section>
         <section data-background-image="img/ZsMwlm2-yellowish.jpg">
             <h3>Lack of Subject Matter Expertise</h3>
-            <p style='text-align: left'>Labeling training data requires necessary subject matter experise</p>
-            <p style='text-align: left'>Labeling and managing training datasets by hand is one of the biggest bottlenecks in machine learning.</p>
-            <p style='text-align: left'>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</p>
+            <ul>
+                <li>Labeling training data requires necessary subject matter experise</li>
+                <li>Labeling and managing training datasets by hand is one of the biggest bottlenecks in machine learning.</li>
+                <li>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</li>
+            </ul>
             <p style='font-size: 45%;'>For eg: Having to deal with datasets at Google Scale</p>
         </section>
+
 
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
             <h3>Possible Solutions</h3>
         </section>
+
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <h3>Weak Labels</h3>
-            <p style='text-align: left'>Intent is to decrease the cost and increase the efficiency of human efforts expended
-                in hand-labeling data.</p>
-            <p style='text-align: left'>Leverage Subject Matter Expertise got less precise input to create heuristic rules for labeling data</p>
-            <p style='font-size: 35%;'>"Data Programming: Creating Large Training Sets, Quickly" - Alexander Ratner, Christopher De Sa, Sen Wu, Daniel Selsam, Christopher Ré https://arxiv.org/pdf/1605.07723v3.pdf</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-            <h3>Lack of Subject Matter Expertise</h3>
-            <p style='text-align: left'>Labeling training data requires necessary subject matter experise</p>
-            <p style='text-align: left'>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</p>
+            <p style='text-align: left'>Ways of generating labeled data</p>
+            <div style="background: #c9c9c9;">
+                <img src='img/how_to_get_labeling_data.png' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
+            </div>
+            <p style='font-size: 35%;'>Source: https://hazyresearch.github.io/snorkel/blog/ws_blog_post.html</p>
         </section>
 
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
             <h3>What is Weak Supervision ?</h3>
+            <p style='text-align: left'>Weak supervision is about leveraging higher-level noisier input from subject matter experts (SMEs).</p>
         </section>
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <p style='text-align: left'>Same Objective as Supervised setting, however instead of Ground Truth data we have:</p>
+            <div style="background: #c9c9c9;">
+                <img src='img/weak-super-formulation.png' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
+            </div>
+        </section>
+
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <h3>Weak Labels</h3>
+            <p style='text-align: left'>Intent is to decrease the cost and increase the efficiency of human efforts expended
+                in hand-labeling data.</p>
+            <p style='text-align: left'>Leverage Subject Matter Expertise to get less precise input to create heuristic rules for labeling data</p>
+            <p style='font-size: 35%;'>"Data Programming: Creating Large Training Sets, Quickly" - Alexander Ratner, Christopher De Sa, Sen Wu, Daniel Selsam, Christopher Ré https://arxiv.org/pdf/1605.07723v3.pdf</p>
+        </section>
+
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
-            <dl>
-                <dt>How to translate a word &rarr; lookup in dictionary</dt>
-                <dd>Ge­b&auml;u­de — building, house, tower.</dd>
-                <br/>
-                <dt>Multiple translations</dt>
-                <dd>some more frequent than others<br/>
-                    for instance: house and building most common</dd>
-            </dl>
+            <h3>Types of Weak Labels</h3>
         </section>
         <section data-background-image="img/ZsMwlm2-yellowish.jpg">
-            <h3>Parallel Text</h3>
+            <h3>Imprecise Labels</h3>
+            <p style='text-align: left'>Use a higher level, less precise input from Subject Matter Experts to create heuristic rules</p>
+            <p style='text-align: left'>Eg: For Spam classification in YouTube comments: </p>
+            <p style='text-align: left'>
+            <pre><code data-trim data-noescape>
+return SPAM if 'contact us' in text
+         </code></pre>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+            <h3>3rd party models to generate labels</h3>
+            <p style='text-align: left'>Eg: Use a Sentiment Classifier for 'Spam/Ham' classification</p>
+        </section>
+
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <p style='text-align: left'>Ways of generating labeled data</p>
+            <div style="background: #c9c9c9;">
+                <img src='img/weak-supervision-process.png' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
+            </div>
+            <p style='font-size: 35%;'>Source: https://hazyresearch.github.io/snorkel/blog/ws_blog_post.html</p>
+        </section>
+
+<!--        <section data-background-image="img/ZsMwlm2-yellowish.jpg">-->
+<!--            <h3>Learning a Unified Weak Supervision Model</h3>-->
+<!--            <p style='text-align: left'>Given a set of Weak </p>-->
+<!--            <ul>-->
+<!--                <li>Labeling training data requires necessary subject matter experise</li>-->
+<!--                <li>Labeling and managing training datasets by hand is one of the biggest bottlenecks in machine learning.</li>-->
+<!--                <li>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</li>-->
+<!--            </ul>-->
+<!--            <p style='font-size: 45%;'>For eg: Having to deal with datasets at Google Scale</p>-->
+<!--        </section>-->
+
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h3>Introducing Snorkel</h3>
+            <p style='text-align: left'>System for programmatically building and managing training datasets without manual labeling</p>
+            <p style='text-align: left'>Develop training datasets in hours/days, as opposed to hand-lableling over several weeks</p>
+            <p style='font-size: 35%;'>See https://www.snorkel.org</p>
+        </section>
+
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <h4>How to Scale - Batch or Stream ?</h4>
+            <br/>
+            <p style='text-align: left'>"Batch is an extension of Streaming, except when Streaming is an extension of Batch"</p>
+            <p style='text-align: right'>-- Shannon Quinn, Apache Mahout</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h4>Spark or Flink ?</h4>
+            <br/>
+            <p style='text-align: left'>"Spark Streaming is for people who want to operate on their streams using Batch idioms.<br/>
+                Flink Batch is for people who want to operate on their batches using Streaming idioms."</p>
+            <p style='text-align: right'>-- Joey Frazee, Apache NiFi</p>
+        </section>
+
+        <section data-background-image="img/ZsMwlm2-greenish.jpg">
+            <h3>Was ist Apache Beam?</h3>
             <ul>
-                <li>In a parallel text we align sentences in one language with the sentences in the other<br/>
-                    <table>
-                        <tr>
-                            <td>Das</td><td>Geb&auml;ude</td><td>ist</td><td>hoch</td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td>
-                        </tr>
-                        <tr>
-                            <td>the</td><td>building</td><td>is</td><td>high</td>
-                        </tr>
-                    </table>
-                </li>
+                <li>Agnostic (unified Batch + Stream) programming model </li>
+                <li>Java, Python, Go SDKs</li>
+                <li>Runners for Dataflow</li>
+                <ul>
+                    <li>Apache Flink</li>
+                    <li>Apache Spark</li>
+                    <li>Google Cloud Dataflow</li>
+                    <li>Local DataRunner</li>
+                </ul>
             </ul>
+            <img src='img/beam_logo_navbar.png' style=' position: absolute; right: 0px; bottom: 0px; width: 30%; height: 30%; margin: 0px, 0px, 0px, 0px; border: none; background: none;box-shadow: none; '/><br/>
         </section>
-        <section data-background-image="img/ZsMwlm2-blueish.jpg">
-            <h3>Parallel Text</h3>
-            <p>A source word could translate into multiple target words</p>
-            <table>
-                <tr>
-                    <td>Das</td><td>ist</td><td>ein</td><td colspan='3' style='text-align: center;'>Hochhaus&nbsp;&nbsp;&nbsp;</td>
-                </tr>
-                <tr>
-                    <td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&#8601;</td><td style='text-align: center;'>&darr;</td><td style='text-align: center;'>&#8600;</td>
-                </tr>
-                <tr>
-                    <td>This</td><td>is</td><td>a</td><td>high&nbsp;&nbsp;&nbsp;</td><td>rise</td><td>building</td>
-                </tr>
-            </table>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <h3>Neural Machine Translation</h3>
-        </section>
-       <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <p style='text-align: left'>Encoder Decoder Architecture</p>
-            <div style="background: #c9c9c9;">
-                <img src='img/gnmt_arch_1_enc_dec.svg' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
-            </div>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <p style='text-align: left'>Encoder Decoder Architecture with Attention</p>
-            <div style="background: #c9c9c9;">
-                <img src='img/Attention.png' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
-            </div>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <p style='text-align: left'>Transformer Model</p>
-            <img src='img/transformer.png' style='max-width: 25%; margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
-            <p style='font-size: 35%;'>"Attention Is All You Need" - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin <br/> Google Brain https://arxiv.org/abs/1706.03762</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <p style='text-align: left'>Generate Translations from Neural Network models trained on Bilingual Corpora.</p>
-            <p style='text-align: left'>Translation happens per a probability distribution one word at time (no phrases).</p>
-            <div style="background: #c9c9c9;">
-                <img src='img/softmax.png' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/><br/>
-                <img src='img/cross_entropy.png' style='margin: 0px, 20px, 0px, 20px; border: none; background: none;box-shadow: none; '/>
-            </div>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Why move from SMT to NMT?</h3>
-          <img src='img/wmt.png' style='max-width: 50%; max-height: 50%; border: none; background: none;box-shadow: none; '/>
-          <p style='font-size: 50%;'>The University of Edinburgh’s Neural MT Systems for WMT17 – Rico Sennrich, Alexandra Birch, Anna Currey, Ulrich Germann, Barry Haddow, Kenneth Heafield, Antonio Valerio Miceli Barone and Philip Williams.</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Samples</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <p>Jetzt LIVE: Abgeordnete debattieren über Zuspitzung des Syrien-Konflikts.</p>
-          <p>last but not least, Members are debating the escalation of the Syrian conflict.</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <p>Sie haben wenig Zeit, wollen aber Fett verbrennen und Muskeln aufbauen?</p>
-          <p>You have little time, but want to burn fat and build muscles?</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Challenges – Twitter Content</h3>
-          <img src='img/twitter_is_hard.png' style='max-width: 75%; max-height: 50%; border: none; background: none;box-shadow: none; '/>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Challenges – Input</h3>
-          <ul>
-            <li>The input into all neural network models is always a vector.</li>
-            <li>Training data is always parallel text.</li>
-            <li>How do you represent a word from the text as a vector?</li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Embedding Layer</h3>
-          <img src='img/vocab_first.png' style='max-width: 100%; border: none; background: none;box-shadow: none; '/>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <img src='img/vocab_learned.png' style='max-width: 100%; border: none; background: none;box-shadow: none; '/>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Challenges – Rare Words</h3>
-          <p>Ok we can now represent 30,000 words as vectors, what about the rest?</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Challenges – Byte Pair Encoding</h3>
-          <img src='img/bpe.png' style='max-width: 65%; border: none; background: none;box-shadow: none; '/>
-          <p style='font-size: 35%;'>Rico Sennrich, Barry Haddow and Alexandra Birch (2016): Neural Machine Translation of Rare Words with Subword Units Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL 2016). Berlin, Germany.</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h4>Byte Pair Encoding</h4>
-          "positional addition contextual"
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h4>Byte Pair Encoding</h4>
-          "posi<span style="color: red">X</span>onal addi<span style="color: red">X</span>on contextual"</br>
-          ti = <span style="color: red">X</span>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h4>Byte Pair Encoding</h4>
-          "posi<span style="color: red">X</span>on<span style="color: blue">Y</span> addi<span style="color: red">X</span>on contextu<span style="color: blue">Y</span>"</br>
-          ti = <span style="color: red">X</span></br>
-          al = <span style="color: blue">Y</span>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h4>Byte Pair Encoding</h4>
-          "posi<span style="color: yellow">Z</span>n<span style="color: blue">Y</span> addi<span style="color: yellow">Z</span>n contextu<span style="color: blue">Y</span>"</br>
-          ti = <span style="color: red">X</span></br>
-          al = <span style="color: blue">Y</span></br>
-          <span style="color: red">X</span>o = <span style="color: yellow">Z</span>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h4>Byte Pair Encoding</h4>
-          these<br/>
-          ing<br/>
-          other<br/>
-          s,<br/>
-          must<br/>
-          Member
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>NMT Challenges – Jagged Tensors</h3>
-          <p>Input is not sorted by length.</p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Jagged Tensors cont.</h3>
-          <img src='img/jagged.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Jagged Tensors cont.</h3>
-          <img src='img/sorted.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Jagged Tensors cont.</h3>
-          <img src='img/batch.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
-        </section>
+
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
             <h3>Streaming Pipelines for NMT</h3>
         </section>
@@ -276,10 +236,6 @@
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
             <h3>NMT Inference Preprocessing</h3>
             <img src='img/NMT_tasks.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
-        </section>
-        <section data-background-image="img/ZsMwlm2-greenish.jpg">
-            <h3>Complete Pipeline (Flink)</h3>
-            <img src='img/Complete-pipeline.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
         </section>
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
             <h3>NMT Inference Pipeline</h3>
@@ -298,8 +254,7 @@
           <h2>Links</h2>
           <ul>
             <li>Snorkel: https://www.snorkel.org/</li>
-            <li>Slides: https://smarthi.github.io/FOSDEM-2020/index.html#/</li>
-            <li>Code: https://github.com/smarthi/streamingnmt</li>
+            <li>Slides: https://smarthi.github.io/FOSDEM-2020-Weak-Supervision-on-Apache-Beam/index.html#/</li>
           </ul>
         </section>
         <section data-background-image="img/ZsMwlm2.jpg">
