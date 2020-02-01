@@ -66,24 +66,46 @@
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
           <h3>OSS Tools</h3>
           <ul>
-            <li>pache Beam</li>
-            <li>Apache Flink</li>
+            <li>Snorkel - Framework for Programmatically Building and Managing Training Data</li>
+            <li>Apache Beam - Unified model for defining both batch and streaming data-parallel processing pipelines</li>
+            <li>Apache Flink - distributed processing engine for <b><span style="color: red">stateful</span></b> computations over data streams.</li>
           </ul>
         </section>
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <h3>Was ist Maschinelle Übersetzung ?</h3>
+            <h3>Problem of Labeled Training Data</h3>
         </section>
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
-           <h3>Maschinelle Übersetzung</h3>
-            <p style='text-align: left'>Generate Translations from Statistical Models trained on Bilingual Corpora.</p>
-            <p style='text-align: left'>Translation happens per a probability distribution <code>p(e|f)</code></p>
-            <pre><code data-trim data-noescape>E = string in the target language (English)
+           <h3>Insufficient Labeled Data</h3>
+            <p style='text-align: left'>Lack of Initial labeled training data to kick start Machine Learning models</p>
+            <p style='text-align: left'>Lack of training data available over time unlike the big Internet companies</p>
+            <p style='text-align: left'>Maybe many years in order to accummulate sufficient training data</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+            <h3>Lack of Subject Matter Expertise</h3>
+            <p style='text-align: left'>Labeling training data requires necessary subject matter experise</p>
+            <p style='text-align: left'>Labeling and managing training datasets by hand is one of the biggest bottlenecks in machine learning.</p>
+            <p style='text-align: left'>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</p>
+            <p style='font-size: 45%;'>For eg: Having to deal with datasets at Google Scale</p>
+        </section>
 
-F = string in the source language (Spanish)
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <h3>Possible Solutions</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <h3>Weak Labels</h3>
+            <p style='text-align: left'>Intent is to decrease the cost and increase the efficiency of human efforts expended
+                in hand-labeling data.</p>
+            <p style='text-align: left'>Leverage Subject Matter Expertise got less precise input to create heuristic rules for labeling data</p>
+            <p style='font-size: 35%;'>"Data Programming: Creating Large Training Sets, Quickly" - Alexander Ratner, Christopher De Sa, Sen Wu, Daniel Selsam, Christopher Ré https://arxiv.org/pdf/1605.07723v3.pdf</p>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+            <h3>Lack of Subject Matter Expertise</h3>
+            <p style='text-align: left'>Labeling training data requires necessary subject matter experise</p>
+            <p style='text-align: left'>Creation of labeled training data becomes prohibitively expensive and impossible when dealing with large datasets</p>
+        </section>
 
-e~ = argmax  p(e|f) = argmax p(f|e) * p(e)
-
-e~ = best translation, the one with highest probability</code></pre>
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+            <h3>What is Weak Supervision ?</h3>
         </section>
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
             <dl>
@@ -275,8 +297,8 @@ e~ = best translation, the one with highest probability</code></pre>
         <section data-background-image="img/ZsMwlm2.jpg">
           <h2>Links</h2>
           <ul>
-            <li>Attention is All You Need, Annotated: http://nlp.seas.harvard.edu/2018/04/03/attention.html</li>
-            <li>Slides: https://kottmann.github.io/FOSDEM-2019-Streaming-NMT/index.html#/</li>
+            <li>Snorkel: https://www.snorkel.org/</li>
+            <li>Slides: https://smarthi.github.io/FOSDEM-2020/index.html#/</li>
             <li>Code: https://github.com/smarthi/streamingnmt</li>
           </ul>
         </section>
