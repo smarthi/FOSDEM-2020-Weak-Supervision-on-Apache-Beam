@@ -150,9 +150,11 @@ Minimize Aggregated loss on Training, eg: SGD (or a loss function)
 
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
             <h3>Weak Labels</h3>
-            <p style='text-align: left'>Intent is to decrease the cost and increase the efficiency of human efforts expended
-                in hand-labeling data.</p>
-            <p style='text-align: left'>Leverage Subject Matter Expertise to get less precise input to create heuristic rules for labeling data</p>
+            <ul>
+                <li>Intent is to decrease the cost and increase the efficiency of human efforts expended
+                    in hand-labeling data.</li>
+                <li>Leverage Subject Matter Expertise to get less precise input to create heuristic rules for labeling data</li>
+            </ul>
             <p style='font-size: 35%;'>"Data Programming: Creating Large Training Sets, Quickly" - Alexander Ratner, Christopher De Sa, Sen Wu, Daniel Selsam, Christopher Ré https://arxiv.org/pdf/1605.07723v3.pdf</p>
         </section>
 
@@ -194,8 +196,10 @@ return SPAM if 'contact us' in text
 
         <section data-background-image="img/ZsMwlm2-redish.jpg">
             <h3>Introducing Snorkel</h3>
-            <p style='text-align: left'>System for programmatically building and managing training datasets without manual labeling</p>
-            <p style='text-align: left'>Develop training datasets in hours/days, as opposed to hand-lableling over several weeks</p>
+            <ul>
+               <li>System for programmatically building and managing training datasets without manual labeling</li>
+               <li>Develop training datasets in hours/days, as opposed to hand-lableling over several weeks</li>
+            </ul>
             <p style='font-size: 35%;'>See https://www.snorkel.org</p>
         </section>
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
@@ -258,14 +262,18 @@ def lf_textblob_polarity(x):
         </section>
 
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
-            <p style='text-align: left'>Output of labeling  functions may overlap/conflict, given the unknown accuracies and correlations with LFs.</p>
-            <p style='text-align: left'>Use a LabelModel to automatically estimate the accuracies and correlations, and produce a final set of integrated training labels</p>
-        </section>
+            <ul>
+               <li>Output of labeling  functions may overlap/conflict, given the unknown accuracies and correlations with LFs.</li>
+               <li>Use a LabelModel to automatically estimate the accuracies and correlations, and produce a final set of integrated training labels</li>
+            </ul>
+         </section>
 
         <section data-background-image="img/ZsMwlm2-redish.jpg">
             <h3>Finally, Train a Classifier</h3>
-            <p style='text-align: left'>Ultimate Goal of Weak Supervision is to create training dataset</p>
-            <p style='text-align: left'>This dataset can now be plugged into any Machine Learning Framework like Keras, PyTorch etc.</p>
+            <ul>
+               <li>Ultimate Goal of Weak Supervision is to create training dataset</li>
+               <li>This dataset can now be plugged into any ML Framework like Keras, PyTorch etc. to further train Deep Learning Models</li>
+            </ul>
         </section>
 
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
@@ -310,17 +318,17 @@ def lf_textblob_polarity(x):
                 <img src='img/beam-model.png' style='height: auto; margin: 0px, 0px, 0px, 0px; border: none; background: none;box-shadow: none; '/>
             </div>
         </section>
-        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
-            <h3>Portable Beam Architecture Overview</h3>
-            <img src='img/beam1.png' style='height: auto; margin: 0px, 0px, 0px, 0px; border: none; background: none;box-shadow: none; '/>
-        </section>
+<!--        <section data-background-image="img/ZsMwlm2-yellowish.jpg">-->
+<!--            <h3>Portable Beam Architecture Overview</h3>-->
+<!--            <img src='img/beam1.png' style='height: auto; margin: 0px, 0px, 0px, 0px; border: none; background: none;box-shadow: none; '/>-->
+<!--        </section>-->
 
         <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-            <h3>Streaming Pipelines for NMT</h3>
+            <h3>Streaming Pipelines for Weak Supervision</h3>
         </section>
 
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
-            <h3>NMT Inference Preprocessing</h3>
+            <h3>NMT Training Preprocessing</h3>
             <img src='img/NMT_tasks.png' style='max-width: 80%; border: none; background: none;box-shadow: none; '/>
         </section>
         <section data-background-image="img/ZsMwlm2-greenish.jpg">
