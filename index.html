@@ -333,6 +333,19 @@ def lf_textblob_polarity(x):
             <img src='img/snorkel_training_flow.png' style='max-width: 65%; border: none; background: none;box-shadow: none; '/>
         </section>
 
+         <section data-background-image="img/ZsMwlm2-blueish.jpg">
+             <h4>Complete Pipeline (Beam)</h4>
+                <pre><code data-trim data-noescape>
+  with beam.Pipeline(options=pipeline_options) as p:
+    weak_model = (p | "Read Unlabelled Data" >> beam.io.ReadFromText("youtube_comments.txt")
+                   | "Apply Labeling Functions" >> beam.ParDo(LFFn.LearningFunctionFn())
+                   | "GroupBy" >> beam.GroupByKey()
+                   | "Apply Labeling Model to minimize inaccuracies"
+                       "and noisy labels" >> beam.ParDo(ApplyLFModel(known_args.models))
+                   | beam.io.WriteToText(known_args.output)
+</code></pre>
+         </section>
+
 <!--        <section data-background-image="img/ZsMwlm2-greenish.jpg">-->
 <!--            <h3>Future Work</h3>-->
 <!--            <ul>-->
